@@ -1,3 +1,11 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <vector>
+#include <cstdio>
+#include <algorithm>
+using namespace std;
+
 class Solution
 {
 public:
@@ -40,3 +48,28 @@ private:
 		}
 	}
 };
+
+int main()
+{
+	Solution s;
+	int n;
+	cin>>n;
+	vector<int>v(n);
+	for(int i=0;i<n;i++)
+	{
+		cin>>v[i];
+	}
+	int target;
+	cin>>target;
+	vector<vector<int> >res;
+	res=s.combinationSum(v,target);
+	for(int i=0;i<res.size();i++)
+	{
+		for(int j=0;j<res[i].size();++j)
+		{
+			cout<<res[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	return 0;
+}
